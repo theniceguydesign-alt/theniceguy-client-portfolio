@@ -1,0 +1,5 @@
+/* Root styling - removed to let Tailwind handle layout */
+#root {
+  width: 100%;
+  height: 100%;
+}

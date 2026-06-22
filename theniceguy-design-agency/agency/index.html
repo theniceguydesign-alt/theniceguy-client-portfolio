@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheNiceGuy.design | Custom Websites for Local Businesses in Mount Dora, FL</title>
+  <meta name="description" content="TheNiceGuy.design builds fast, beautiful, lead-generating websites for local service businesses in Mount Dora, Florida and surrounding areas. Custom design, under 1-second load times.">
+  <meta name="keywords" content="web design Mount Dora, local business websites, custom web design Florida, small business website, lead generating websites">
+  <meta name="author" content="TheNiceGuy.design LLC">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="TheNiceGuy.design | Custom Websites for Local Businesses">
+  <meta property="og:description" content="Fast, beautiful websites that turn visitors into customers. Based in Mount Dora, FL.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theniceguy.design">
+  <meta property="og:image" content="https://theniceguy.design/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TheNiceGuy.design | Websites for Local Businesses">
+  <meta name="twitter:description" content="Fast, beautiful, lead-generating websites for local service businesses in Mount Dora, FL.">
+  <link rel="canonical" href="https://theniceguy.design">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========== CSS RESET & BASE ========== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --ink: #13161B;
+      --paper: #F7F5F0;
+      --signal: #2DD4BF;
+      --signal-dark: #1FAE9C;
+      --slate: #5B6472;
+      --gold: #E8B04B;
+      --white: #FFFFFF;
+      --ink-light: #1E232B;
+      --ink-lighter: #2A313D;
+      --slate-light: #8A94A3;
+      --slate-lighter: #C5CAD1;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(19,22,27,0.08);
+      --shadow-md: 0 4px 20px rgba(19,22,27,0.12);
+      --shadow-lg: 0 12px 40px rgba(19,22,27,0.18);
+      --shadow-xl: 0 24px 60px rgba(19,22,27,0.22);
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul, ol { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    input, textarea, select { font-family: inherit; }
+
+    /* ========== TYPOGRAPHY ========== */
+    h1, h2, h3, h4, h5, h6 { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(2.2rem, 5.5vw, 3.8rem); }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.6rem); }
+    h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+    .section-label {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--signal);
+      margin-bottom: 1rem;
+    }
+
+    /* ========== CONTAINER ========== */
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    @media(min-width: 768px) { .container { padding: 0 2rem; } }
+    @media(min-width: 1024px) { .container { padding: 0 2.5rem; } }
+
+    /* ========== BUTTONS ========== */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.85rem 1.8rem; border-radius: var(--radius);
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 0.95rem; font-weight: 600; letter-spacing: -0.01em;
+      transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+    .btn-primary {
+      background: var(--signal); color: var(--ink);
+      box-shadow: 0 4px 16px rgba(45,212,191,0.3);
+    }
+    .btn-primary:hover { background: var(--signal-dark); box-shadow: 0 6px 24px rgba(45,212,191,0.4); }
+    .btn-secondary {
+      background: transparent; color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.25);
+    }
+    .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
+    .btn-gold {
+      background: var(--gold); color: var(--ink);
+      box-shadow: 0 4px 16px rgba(232,176,75,0.3);
+    }
+    .btn-gold:hover { background: #D9A03E; box-shadow: 0 6px 24px rgba(232,176,75,0.4); }
+    .btn-ink {
+      background: var(--ink); color: var(--white);
+      border: 1.5px solid var(--ink-lighter);
+    }
+    .btn-ink:hover { background: var(--ink-light); }
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ========== NAVIGATION ========== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 0.75rem 0;
+      transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .nav.scrolled {
+      background: rgba(19,22,27,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 1.3rem; font-weight: 700; color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--signal); }
+    .nav-links { display: none; gap: 2.2rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.88rem; font-weight: 500; color: rgba(255,255,255,0.7);
+      transition: color 0.2s; letter-spacing: 0.01em;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { display: none; }
+    .mobile-menu-btn {
+      display: flex; flex-direction: column; gap: 5px; padding: 6px;
+    }
+    .mobile-menu-btn span {
+      display: block; width: 24px; height: 2px; background: var(--white);
+      border-radius: 2px; transition: all 0.3s;
+    }
+    .mobile-menu-btn.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .mobile-menu-btn.open span:nth-child(2) { opacity: 0; }
+    .mobile-menu-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--ink); z-index: 999;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+      transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .mobile-menu.open { transform: translateX(0); }
+    .mobile-menu a {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 1.5rem; font-weight: 600; color: var(--white);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--signal); }
+    .mobile-menu .btn-primary { margin-top: 1rem; }
+    @media(min-width: 768px) {
+      .nav-links { display: flex; }
+      .nav-cta { display: inline-flex; }
+      .mobile-menu-btn { display: none; }
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center;
+      background: var(--ink);
+      overflow: hidden;
+      padding-top: 100px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+    }
+    .hero-bg::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(45,212,191,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(232,176,75,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 80% at 70% 80%, rgba(45,212,191,0.05) 0%, transparent 50%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 70%);
+    }
+    .hero-dots {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(45,212,191,0.15) 1px, transparent 1px);
+      background-size: 30px 30px;
+      mask-image: radial-gradient(ellipse 50% 50% at 60% 40%, black 0%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse 50% 50% at 60% 40%, black 0%, transparent 70%);
+    }
+    .hero-inner { position: relative; z-index: 2; width: 100%; }
+    .hero-content { max-width: 720px; }
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.4rem 1rem; border-radius: 100px;
+      background: rgba(45,212,191,0.1); border: 1px solid rgba(45,212,191,0.2);
+      font-size: 0.8rem; font-weight: 500; color: var(--signal);
+      margin-bottom: 1.75rem; animation: fadeInUp 0.8s ease-out both;
+    }
+    .hero-label::before {
+      content: ''; display: block; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--signal); animation: pulse 2s ease-in-out infinite;
+    }
+    .hero h1 {
+      color: var(--white); margin-bottom: 1.25rem;
+      font-weight: 700; line-height: 1.08;
+      animation: fadeInUp 0.8s ease-out 0.15s both;
+    }
+    .hero h1 .accent { color: var(--signal); }
+    .hero p {
+      font-size: clamp(1rem, 1.8vw, 1.2rem); color: var(--slate-light);
+      max-width: 540px; margin-bottom: 2.25rem; line-height: 1.7;
+      animation: fadeInUp 0.8s ease-out 0.3s both;
+    }
+    .hero-ctas {
+      display: flex; flex-wrap: wrap; gap: 0.875rem;
+      animation: fadeInUp 0.8s ease-out 0.45s both;
+    }
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-top: 3.5rem;
+      padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);
+      animation: fadeInUp 0.8s ease-out 0.6s both;
+    }
+    .hero-stat .stat-num {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 1.6rem; font-weight: 700; color: var(--signal); display: block;
+    }
+    .hero-stat .stat-label { font-size: 0.8rem; color: var(--slate); margin-top: 0.15rem; }
+    .hero-visual {
+      display: none; position: absolute; right: -5%; top: 50%; transform: translateY(-50%);
+      width: 500px; height: 500px;
+    }
+    .hero-visual-ring {
+      position: absolute; border-radius: 50%;
+      border: 1px solid rgba(45,212,191,0.15);
+      animation: float 6s ease-in-out infinite;
+    }
+    .hero-visual-ring:nth-child(1) { width: 100%; height: 100%; top: 0; left: 0; animation-delay: 0s; }
+    .hero-visual-ring:nth-child(2) { width: 75%; height: 75%; top: 12.5%; left: 12.5%; animation-delay: -2s; border-color: rgba(232,176,75,0.15); }
+    .hero-visual-ring:nth-child(3) { width: 50%; height: 50%; top: 25%; left: 25%; animation-delay: -4s; border-color: rgba(45,212,191,0.1); }
+    .hero-visual-ring:nth-child(4) { width: 25%; height: 25%; top: 37.5%; left: 37.5%; animation-delay: -1s; border-color: rgba(255,255,255,0.08); }
+    @media(min-width: 1024px) { .hero-visual { display: block; } }
+
+    /* ========== VALUE PROPOSITION ========== */
+    .value { padding: 5rem 0; background: var(--paper); }
+    .value-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+    }
+    @media(min-width: 768px) { .value-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } }
+    .value-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      padding: 2rem; text-align: center;
+      box-shadow: var(--shadow-sm); border: 1px solid rgba(19,22,27,0.05);
+      transition: all 0.3s ease;
+    }
+    .value-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .value-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem; font-size: 1.5rem;
+    }
+    .value-icon.teal { background: rgba(45,212,191,0.12); }
+    .value-icon.gold { background: rgba(232,176,75,0.12); }
+    .value-icon.slate { background: rgba(91,100,114,0.1); }
+    .value-card h3 { margin-bottom: 0.5rem; color: var(--ink); }
+    .value-card p { font-size: 0.88rem; color: var(--slate); line-height: 1.6; }
+
+    /* ========== HOW IT WORKS ========== */
+    .process { padding: 5rem 0; background: var(--ink); position: relative; overflow: hidden; }
+    .process .section-label { color: var(--signal); }
+    .process h2 { color: var(--white); margin-bottom: 3rem; text-align: center; }
+    .process-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+    }
+    @media(min-width: 768px) { .process-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(min-width: 1024px) { .process-grid { grid-template-columns: repeat(4, 1fr); } }
+    .process-card {
+      background: var(--ink-light); border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem; border: 1px solid rgba(255,255,255,0.06);
+      position: relative; transition: all 0.3s ease;
+    }
+    .process-card:hover { border-color: rgba(45,212,191,0.3); transform: translateY(-4px); }
+    .process-num {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 2.5rem; font-weight: 700; color: rgba(45,212,191,0.25);
+      line-height: 1; margin-bottom: 1rem;
+    }
+    .process-card h3 { color: var(--white); margin-bottom: 0.6rem; font-size: 1.1rem; }
+    .process-card p { color: var(--slate-light); font-size: 0.88rem; line-height: 1.6; }
+    .process-connector {
+      display: none; position: absolute; top: 50%; right: -1.5rem;
+      width: 1.5rem; height: 2px; background: rgba(45,212,191,0.2);
+    }
+    @media(min-width: 1024px) { .process-connector { display: block; } }
+
+    /* ========== PRICING ========== */
+    .pricing { padding: 5rem 0; background: var(--paper); }
+    .pricing h2 { text-align: center; margin-bottom: 0.75rem; }
+    .pricing-sub { text-align: center; color: var(--slate); max-width: 500px; margin: 0 auto 3rem; font-size: 1rem; }
+    .pricing-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: start;
+    }
+    @media(min-width: 768px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+    @media(min-width: 1024px) { .pricing-grid { gap: 1.5rem; } }
+    .pricing-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem; border: 1.5px solid rgba(19,22,27,0.07);
+      box-shadow: var(--shadow-sm); transition: all 0.3s ease; position: relative;
+    }
+    .pricing-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .pricing-card.featured {
+      border-color: var(--signal);
+      box-shadow: 0 4px 24px rgba(45,212,191,0.15);
+      transform: scale(1.02);
+    }
+    .pricing-card.featured:hover { transform: scale(1.02) translateY(-3px); }
+    .pricing-badge {
+      position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+      background: var(--signal); color: var(--ink);
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 0.35rem 1rem; border-radius: 0 0 8px 8px; white-space: nowrap;
+    }
+    .pricing-tier { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+    .pricing-desc { font-size: 0.82rem; color: var(--slate); margin-bottom: 1.25rem; }
+    .pricing-price { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 2.4rem; font-weight: 700; color: var(--ink); line-height: 1; }
+    .pricing-price .period { font-size: 0.85rem; font-weight: 400; color: var(--slate); }
+    .pricing-features { margin: 1.5rem 0; }
+    .pricing-features li {
+      display: flex; align-items: flex-start; gap: 0.6rem;
+      padding: 0.5rem 0; font-size: 0.88rem; color: var(--ink-light);
+      border-bottom: 1px solid rgba(19,22,27,0.04);
+    }
+    .pricing-features li:last-child { border-bottom: none; }
+    .pricing-features .check {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: rgba(45,212,191,0.15); color: var(--signal-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; flex-shrink: 0; margin-top: 1px;
+    }
+    .pricing-card .btn { width: 100%; }
+
+    /* ========== PORTFOLIO ========== */
+    .portfolio { padding: 5rem 0; background: var(--white); }
+    .portfolio h2 { text-align: center; margin-bottom: 0.75rem; }
+    .portfolio-sub { text-align: center; color: var(--slate); max-width: 500px; margin: 0 auto 3rem; }
+    .portfolio-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1.25rem;
+    }
+    @media(min-width: 640px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(min-width: 1024px) { .portfolio-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media(min-width: 1280px) { .portfolio-grid { grid-template-columns: repeat(4, 1fr); } }
+    .portfolio-card {
+      border-radius: var(--radius-lg); overflow: hidden;
+      background: var(--paper); border: 1px solid rgba(19,22,27,0.06);
+      box-shadow: var(--shadow-sm); transition: all 0.35s ease;
+      cursor: pointer;
+    }
+    .portfolio-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .portfolio-card:hover .portfolio-img { transform: scale(1.05); }
+    .portfolio-img-wrap { height: 180px; overflow: hidden; position: relative; }
+    .portfolio-img {
+      width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
+    }
+    .portfolio-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(19,22,27,0.6) 0%, transparent 60%);
+      display: flex; align-items: flex-end; padding: 1rem;
+    }
+    .portfolio-category {
+      display: inline-block; padding: 0.25rem 0.6rem; border-radius: 6px;
+      background: var(--signal); color: var(--ink);
+      font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .portfolio-info { padding: 1.25rem; }
+    .portfolio-info h3 { font-size: 1.05rem; margin-bottom: 0.35rem; color: var(--ink); }
+    .portfolio-info p { font-size: 0.82rem; color: var(--slate); line-height: 1.55; margin-bottom: 0.75rem; }
+    .portfolio-link {
+      font-size: 0.82rem; font-weight: 600; color: var(--signal-dark);
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      transition: gap 0.2s;
+    }
+    .portfolio-link:hover { gap: 0.5rem; }
+
+    /* ========== ABOUT ========== */
+    .about { padding: 5rem 0; background: var(--paper); }
+    .about-inner {
+      display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center;
+    }
+    @media(min-width: 768px) { .about-inner { grid-template-columns: 280px 1fr; gap: 3.5rem; } }
+    .about-photo {
+      width: 220px; height: 220px; border-radius: var(--radius-lg);
+      background: var(--ink); display: flex; align-items: center; justify-content: center;
+      margin: 0 auto; position: relative; overflow: hidden;
+    }
+    .about-photo::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(45,212,191,0.15), transparent 60%);
+    }
+    .about-photo .initials {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 4rem; font-weight: 700; color: var(--signal); position: relative; z-index: 1;
+    }
+    .about-text h2 { margin-bottom: 1rem; }
+    .about-text p { color: var(--slate); margin-bottom: 1rem; line-height: 1.7; }
+    .about-signature {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 1.1rem; font-weight: 600; color: var(--ink); margin-top: 1.5rem;
+    }
+    .about-location {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.85rem; color: var(--slate); margin-top: 0.5rem;
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials { padding: 5rem 0; background: var(--ink); position: relative; overflow: hidden; }
+    .testimonials .section-label { color: var(--signal); }
+    .testimonials h2 { color: var(--white); text-align: center; margin-bottom: 3rem; }
+    .testimonials-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1.25rem;
+    }
+    @media(min-width: 768px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(min-width: 1024px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+    .testimonial-card {
+      background: var(--ink-light); border-radius: var(--radius-lg);
+      padding: 1.75rem; border: 1px solid rgba(255,255,255,0.06);
+      transition: all 0.3s ease;
+    }
+    .testimonial-card:hover { border-color: rgba(45,212,191,0.2); }
+    .testimonial-stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .testimonial-text {
+      font-size: 0.9rem; color: rgba(255,255,255,0.82); line-height: 1.7;
+      margin-bottom: 1.25rem; font-style: italic;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+    .testimonial-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(45,212,191,0.15); display: flex; align-items: center; justify-content: center;
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 0.85rem; font-weight: 600; color: var(--signal); flex-shrink: 0;
+    }
+    .testimonial-name { font-size: 0.88rem; font-weight: 600; color: var(--white); }
+    .testimonial-role { font-size: 0.78rem; color: var(--slate); }
+
+    /* ========== FAQ ========== */
+    .faq { padding: 5rem 0; background: var(--white); }
+    .faq h2 { text-align: center; margin-bottom: 3rem; }
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid rgba(19,22,27,0.08); overflow: hidden;
+    }
+    .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 1.05rem; font-weight: 600; color: var(--ink); text-align: left;
+      transition: color 0.2s; background: none; border: none;
+    }
+    .faq-question:hover { color: var(--signal-dark); }
+    .faq-icon {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: rgba(45,212,191,0.1); display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; color: var(--signal-dark); flex-shrink: 0; margin-left: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-icon { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.4s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px; padding-bottom: 1.25rem;
+    }
+    .faq-answer p { font-size: 0.9rem; color: var(--slate); line-height: 1.7; }
+
+    /* ========== CONTACT ========== */
+    .contact { padding: 5rem 0; background: var(--ink); position: relative; overflow: hidden; }
+    .contact-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(45,212,191,0.06) 0%, transparent 60%);
+    }
+    .contact-inner { position: relative; z-index: 1; }
+    .contact h2 { color: var(--white); text-align: center; margin-bottom: 0.75rem; }
+    .contact-sub { text-align: center; color: var(--slate); max-width: 500px; margin: 0 auto 2.5rem; }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start;
+    }
+    @media(min-width: 768px) { .contact-grid { grid-template-columns: 1fr 1.2fr; gap: 3.5rem; } }
+    .contact-info h3 { color: var(--white); margin-bottom: 1rem; font-size: 1.2rem; }
+    .contact-info p { color: var(--slate-light); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.7; }
+    .contact-detail {
+      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.875rem;
+      font-size: 0.9rem;
+    }
+    .contact-detail .icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: rgba(45,212,191,0.1); display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .contact-detail a { color: var(--slate-light); transition: color 0.2s; }
+    .contact-detail a:hover { color: var(--signal); }
+    .contact-cta-box {
+      background: var(--ink-light); border-radius: var(--radius-lg);
+      padding: 1.5rem; border: 1px solid rgba(255,255,255,0.06); margin-top: 1.5rem;
+    }
+    .contact-cta-box h4 { color: var(--white); font-size: 1rem; margin-bottom: 0.5rem; }
+    .contact-cta-box p { color: var(--slate); font-size: 0.82rem; margin-bottom: 1rem; }
+    .contact-form {
+      background: var(--ink-light); border-radius: var(--radius-lg);
+      padding: 2rem; border: 1px solid rgba(255,255,255,0.06);
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block; font-size: 0.8rem; font-weight: 600; color: var(--slate-light);
+      margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%; padding: 0.8rem 1rem; border-radius: var(--radius);
+      background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.1);
+      color: var(--white); font-size: 0.92rem; transition: all 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none; border-color: var(--signal); background: rgba(45,212,191,0.05);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--slate); }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr; gap: 0; }
+    @media(min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; gap: 0 1rem; } }
+    .contact-form .btn { width: 100%; padding: 1rem; font-size: 1rem; }
+
+    /* ========== FOOTER ========== */
+    .footer { padding: 3rem 0 1.5rem; background: var(--ink); border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-inner { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem; }
+    @media(min-width: 768px) { .footer-inner { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; } }
+    .footer-brand .footer-logo {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; display: block;
+    }
+    .footer-brand .footer-logo span { color: var(--signal); }
+    .footer-brand p { font-size: 0.85rem; color: var(--slate); line-height: 1.6; max-width: 280px; }
+    .footer-col h4 {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 0.85rem; font-weight: 600; color: var(--white); margin-bottom: 1rem;
+    }
+    .footer-col a {
+      display: block; font-size: 0.85rem; color: var(--slate); margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--signal); }
+    .footer-social { display: flex; gap: 0.75rem; margin-top: 1.25rem; }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s; font-size: 0.9rem;
+    }
+    .footer-social a:hover { background: var(--signal); color: var(--ink); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.25rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      text-align: center;
+    }
+    @media(min-width: 640px) { .footer-bottom { flex-direction: row; justify-content: space-between; } }
+    .footer-bottom p { font-size: 0.78rem; color: var(--slate); }
+
+    /* ========== SCROLL TO TOP ========== */
+    .scroll-top {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--signal); color: var(--ink);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(45,212,191,0.3);
+      opacity: 0; transform: translateY(10px); pointer-events: none;
+      transition: all 0.3s ease; font-size: 1.1rem;
+    }
+    .scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .scroll-top:hover { background: var(--signal-dark); transform: translateY(-2px); }
+
+    /* ========== RESPONSIVE ADJUSTMENTS ========== */
+    @media(max-width: 767px) {
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .pricing-card.featured { transform: scale(1); }
+      .pricing-card.featured:hover { transform: scale(1) translateY(-3px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">TheNiceGuy<span>.</span>design</a>
+      <div class="nav-links">
+        <a href="#process">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#portfolio">Work</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="btn btn-primary nav-cta">Book a Call</a>
+      <button class="mobile-menu-btn" id="menuBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#process" class="mobile-link">How It Works</a>
+    <a href="#pricing" class="mobile-link">Pricing</a>
+    <a href="#portfolio" class="mobile-link">Work</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="#contact" class="btn btn-primary">Book a Call</a>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-dots"></div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-visual-ring"></div>
+      <div class="hero-visual-ring"></div>
+      <div class="hero-visual-ring"></div>
+      <div class="hero-visual-ring"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-label">Mount Dora, FL Web Design Studio</div>
+        <h1>Websites for local service businesses that <span class="accent">actually bring you leads.</span></h1>
+        <p>No templates. No bloated page builders. Just fast, beautiful, custom-built websites designed to turn visitors into paying customers — right here in Central Florida.</p>
+        <div class="hero-ctas">
+          <a href="#portfolio" class="btn btn-primary">See Our Work</a>
+          <a href="#contact" class="btn btn-secondary">Book a Call</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-num">&lt; 1s</span>
+            <span class="stat-label">Page Load</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Custom Design</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-num">1-2</span>
+            <span class="stat-label">Weeks Delivery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VALUE PROPOSITION ========== -->
+  <section class="value" id="value">
+    <div class="container">
+      <div class="value-grid">
+        <div class="value-card reveal">
+          <div class="value-icon teal">&#9889;</div>
+          <h3>Lightning Fast</h3>
+          <p>Under 1-second page loads with hand-optimized code. No bloated themes, no slow plugins — just pure performance that Google rewards with better rankings.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-1">
+          <div class="value-icon gold">&#127912;</div>
+          <h3>Fully Custom</h3>
+          <p>Every pixel is designed for your brand. No cookie-cutter templates. Your website will be as unique as your business, crafted to convert your specific audience.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-2">
+          <div class="value-icon slate">&#128640;</div>
+          <h3>Rapid Delivery</h3>
+          <p>Most sites go from kickoff to launch in 1-2 weeks. Clear process, constant communication, and no surprises — you know exactly what to expect at every step.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">The Process</div>
+        <h2>How It Works</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-card reveal">
+          <div class="process-connector"></div>
+          <div class="process-num">01</div>
+          <h3>Kickoff & Deposit</h3>
+          <p>We hop on a 30-min call to discuss your goals, review your content, and lock in the project scope. A 50% deposit gets us started immediately.</p>
+        </div>
+        <div class="process-card reveal reveal-delay-1">
+          <div class="process-connector"></div>
+          <div class="process-num">02</div>
+          <h3>Design & Build</h3>
+          <p>I design and build your site from scratch — every section, every animation, every detail crafted to convert your visitors into customers.</p>
+        </div>
+        <div class="process-card reveal reveal-delay-2">
+          <div class="process-connector"></div>
+          <div class="process-num">03</div>
+          <h3>Revisions</h3>
+          <p>You review the live preview and send feedback. I make up to 2 rounds of revisions to make sure everything is exactly how you want it.</p>
+        </div>
+        <div class="process-card reveal reveal-delay-3">
+          <div class="process-num">04</div>
+          <h3>Launch</h3>
+          <p>After your final approval and the remaining 50%, your site goes live. I handle domain setup, hosting, and make sure everything runs perfectly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING ========== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">Pricing</div>
+        <h2>Simple, Transparent Pricing</h2>
+        <p class="pricing-sub">No hidden fees. No surprises. Pick the package that fits your business and let's get started.</p>
+      </div>
+      <div class="pricing-grid">
+        <!-- Essential -->
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Essential</div>
+          <div class="pricing-desc">Perfect for new businesses getting started online.</div>
+          <div class="pricing-price">$2,800</div>
+          <ul class="pricing-features">
+            <li><span class="check">&#10003;</span> 1-page custom website</li>
+            <li><span class="check">&#10003;</span> Mobile responsive design</li>
+            <li><span class="check">&#10003;</span> Contact form integration</li>
+            <li><span class="check">&#10003;</span> Basic SEO setup</li>
+            <li><span class="check">&#10003;</span> Google Maps embed</li>
+            <li><span class="check">&#10003;</span> Social media links</li>
+            <li><span class="check">&#10003;</span> 2 revision rounds</li>
+            <li><span class="check">&#10003;</span> 1 week delivery</li>
+          </ul>
+          <a href="#contact" class="btn btn-ink">Get Started</a>
+        </div>
+        <!-- Pro (Featured) -->
+        <div class="pricing-card featured reveal reveal-delay-1">
+          <div class="pricing-badge">Most Chosen</div>
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-desc">The complete package for growing local businesses.</div>
+          <div class="pricing-price">$4,500</div>
+          <ul class="pricing-features">
+            <li><span class="check">&#10003;</span> Up to 5 custom pages</li>
+            <li><span class="check">&#10003;</span> Mobile + tablet responsive</li>
+            <li><span class="check">&#10003;</span> Advanced contact forms</li>
+            <li><span class="check">&#10003;</span> Full on-page SEO</li>
+            <li><span class="check">&#10003;</span> Google Business integration</li>
+            <li><span class="check">&#10003;</span> Custom animations</li>
+            <li><span class="check">&#10003;</span> Photo gallery / portfolio</li>
+            <li><span class="check">&#10003;</span> Blog setup</li>
+            <li><span class="check">&#10003;</span> 2 revision rounds</li>
+            <li><span class="check">&#10003;</span> 1-2 week delivery</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+        </div>
+        <!-- Growth -->
+        <div class="pricing-card reveal reveal-delay-2">
+          <div class="pricing-tier">Growth</div>
+          <div class="pricing-desc">For businesses ready to dominate their market online.</div>
+          <div class="pricing-price">$6,500<span class="period"> + $150/mo</span></div>
+          <ul class="pricing-features">
+            <li><span class="check">&#10003;</span> Everything in Pro</li>
+            <li><span class="check">&#10003;</span> Up to 10 custom pages</li>
+            <li><span class="check">&#10003;</span> Premium hosting included</li>
+            <li><span class="check">&#10003;</span> Monthly content updates</li>
+            <li><span class="check">&#10003;</span> Priority support</li>
+            <li><span class="check">&#10003;</span> Performance monitoring</li>
+            <li><span class="check">&#10003;</span> Quarterly SEO reports</li>
+            <li><span class="check">&#10003;</span> Analytics dashboard</li>
+            <li><span class="check">&#10003;</span> 3 revision rounds</li>
+            <li><span class="check">&#10003;</span> 2-3 week delivery</li>
+          </ul>
+          <a href="#contact" class="btn btn-ink">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PORTFOLIO ========== -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">Our Work</div>
+        <h2>Websites Built for Real Local Businesses</h2>
+        <p class="portfolio-sub">Every site is custom-designed, hand-coded, and built to bring in leads. Here are the businesses we're proud to work with in and around Mount Dora.</p>
+      </div>
+      <div class="portfolio-grid">
+        <!-- Card 1 -->
+        <div class="portfolio-card reveal">
+          <div class="portfolio-img-wrap">
+            <svg class="portfolio-img" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="180" fill="#1E232B"/>
+              <circle cx="200" cy="70" r="30" fill="rgba(45,212,191,0.1)"/>
+              <text x="200" y="78" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" fill="#2DD4BF">&#127769;</text>
+              <text x="200" y="125" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600" fill="#F7F5F0">Moonlit Acre Carriages</text>
+            </svg>
+            <div class="portfolio-img-overlay">
+              <span class="portfolio-category">Hospitality</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Moonlit Acre Carriages</h3>
+            <p>Enchanting horse-drawn carriage experiences. A romantic, elegant website showcasing their magical rides.</p>
+            <span class="portfolio-link">View Site &rarr;</span>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="portfolio-card reveal reveal-delay-1">
+          <div class="portfolio-img-wrap">
+            <svg class="portfolio-img" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="180" fill="#1E232B"/>
+              <rect x="160" y="50" width="80" height="50" rx="8" fill="rgba(232,176,75,0.1)"/>
+              <text x="200" y="82" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" fill="#E8B04B">&#127860;</text>
+              <text x="200" y="125" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600" fill="#F7F5F0">Bavaria Haus</text>
+            </svg>
+            <div class="portfolio-img-overlay">
+              <span class="portfolio-category">Restaurant</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Bavaria Haus</h3>
+            <p>Authentic German cuisine with a warm, inviting web presence that makes visitors want a reservation.</p>
+            <span class="portfolio-link">View Site &rarr;</span>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="portfolio-card reveal reveal-delay-2">
+          <div class="portfolio-img-wrap">
+            <svg class="portfolio-img" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="180" fill="#1E232B"/>
+              <rect x="160" y="50" width="80" height="50" rx="8" fill="rgba(45,212,191,0.1)"/>
+              <text x="200" y="82" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" fill="#2DD4BF">&#128296;</text>
+              <text x="200" y="125" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600" fill="#F7F5F0">Faden Builders</text>
+            </svg>
+            <div class="portfolio-img-overlay">
+              <span class="portfolio-category">Contractor</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Faden Builders</h3>
+            <p>Professional construction services. A rugged yet refined site that builds trust before the first call.</p>
+            <span class="portfolio-link">View Site &rarr;</span>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="portfolio-card reveal">
+          <div class="portfolio-img-wrap">
+            <svg class="portfolio-img" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="180" fill="#1E232B"/>
+              <rect x="160" y="50" width="80" height="50" rx="8" fill="rgba(232,176,75,0.1)"/>
+              <text x="200" y="82" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" fill="#E8B04B">&#9749;</text>
+              <text x="200" y="125" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600" fill="#F7F5F0">Cafe Gianni</text>
+            </svg>
+            <div class="portfolio-img-overlay">
+              <span class="portfolio-category">Restaurant</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Cafe Gianni</h3>
+            <p>Cozy Italian cafe with a charming website that captures the warmth of their dining experience.</p>
+            <span class="portfolio-link">View Site &rarr;</span>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="portfolio-card reveal reveal-delay-1">
+          <div class="portfolio-img-wrap">
+            <svg class="portfolio-img" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="180" fill="#1E232B"/>
+              <rect x="160" y="50" width="80" height="50" rx="8" fill="rgba(255,182,193,0.1)"/>
+              <text x="200" y="82" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" fill="#FFB6C1">&#128135;</text>
+              <text x="200" y="125" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600" fill="#F7F5F0">Blow Hair Studio</text>
+            </svg>
+            <div class="portfolio-img-overlay">
+              <span class="portfolio-category">Salon</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Blow Hair Studio</h3>
+            <p>Modern hair salon with online booking. A sleek, stylish site that matches their brand aesthetic.</p>
+            <span class="portfolio-link">View Site &rarr;</span>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="portfolio-card reveal reveal-delay-2">
+          <div class="portfolio-img-wrap">
+            <svg class="portfolio-img" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="180" fill="#1E232B"/>
+              <rect x="160" y="50" width="80" height="50" rx="8" fill="rgba(45,212,191,0.1)"/>
+              <text x="200" y="82" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" fill="#2DD4BF">&#127801;</text>
+              <text x="200" y="125" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600" fill="#F7F5F0">The Donnelly House</text>
+            </svg>
+            <div class="portfolio-img-overlay">
+              <span class="portfolio-category">Event Venue</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>The Donnelly House</h3>
+            <p>Historic event venue in the heart of Mount Dora. A stunning showcase of their beautiful spaces.</p>
+            <span class="portfolio-link">View Site &rarr;</span>
+          </div>
+        </div>
+        <!-- Card 7 -->
+        <div class="portfolio-card reveal">
+          <div class="portfolio-img-wrap">
+            <svg class="portfolio-img" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="180" fill="#1E232B"/>
+              <rect x="160" y="50" width="80" height="50" rx="8" fill="rgba(232,176,75,0.1)"/>
+              <text x="200" y="82" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" fill="#E8B04B">&#127818;</text>
+              <text x="200" y="125" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600" fill="#F7F5F0">Lemon Drop Market</text>
+            </svg>
+            <div class="portfolio-img-overlay">
+              <span class="portfolio-category">Retail</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Lemon Drop Market</h3>
+            <p>Boutique retail shop with curated goods. A bright, cheerful website that reflects their brand.</p>
+            <span class="portfolio-link">View Site &rarr;</span>
+          </div>
+        </div>
+        <!-- Card 8 -->
+        <div class="portfolio-card reveal reveal-delay-1">
+          <div class="portfolio-img-wrap">
+            <svg class="portfolio-img" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="180" fill="#1E232B"/>
+              <rect x="160" y="50" width="80" height="50" rx="8" fill="rgba(45,212,191,0.1)"/>
+              <text x="200" y="82" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" fill="#2DD4BF">&#128295;</text>
+              <text x="200" y="125" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600" fill="#F7F5F0">MJS Home Improvements</text>
+            </svg>
+            <div class="portfolio-img-overlay">
+              <span class="portfolio-category">Handyman</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>MJS Home Improvements</h3>
+            <p>Reliable home repair and renovation services. A no-nonsense site that gets the phone ringing.</p>
+            <span class="portfolio-link">View Site &rarr;</span>
+          </div>
+        </div>
+        <!-- Card 9 -->
+        <div class="portfolio-card reveal reveal-delay-2">
+          <div class="portfolio-img-wrap">
+            <svg class="portfolio-img" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="180" fill="#1E232B"/>
+              <rect x="160" y="50" width="80" height="50" rx="8" fill="rgba(255,200,150,0.1)"/>
+              <text x="200" y="82" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" fill="#FFCC99">&#127849;</text>
+              <text x="200" y="125" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600" fill="#F7F5F0">Kings Donuts & Deli</text>
+            </svg>
+            <div class="portfolio-img-overlay">
+              <span class="portfolio-category">Bakery</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Kings Donuts & Deli</h3>
+            <p>Fresh donuts, sandwiches, and daily specials. A mouth-watering web presence with menu highlights.</p>
+            <span class="portfolio-link">View Site &rarr;</span>
+          </div>
+        </div>
+        <!-- Card 10 -->
+        <div class="portfolio-card reveal">
+          <div class="portfolio-img-wrap">
+            <svg class="portfolio-img" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="180" fill="#1E232B"/>
+              <rect x="160" y="50" width="80" height="50" rx="8" fill="rgba(45,212,191,0.1)"/>
+              <text x="200" y="82" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" fill="#2DD4BF">&#128663;</text>
+              <text x="200" y="125" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="13" font-weight="600" fill="#F7F5F0">Auto Detailing By Fabian</text>
+            </svg>
+            <div class="portfolio-img-overlay">
+              <span class="portfolio-category">Auto Services</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3>Auto Detailing By Fabian</h3>
+            <p>Premium auto detailing that makes cars look brand new. A polished site for a premium service.</p>
+            <span class="portfolio-link">View Site &rarr;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-photo reveal">
+          <span class="initials">MN</span>
+        </div>
+        <div class="about-text reveal reveal-delay-1">
+          <div class="section-label">Meet the Designer</div>
+          <h2>Hi, I'm Matthew Nolan</h2>
+          <p>I'm a web designer based right here in <strong>Mount Dora, Florida</strong>. I started TheNiceGuy.design because I saw too many local businesses stuck with slow, template-looking websites that don't bring in a single lead.</p>
+          <p>I build every site by hand — writing clean, optimized code that loads in under a second and looks incredible on every device. No page builders. No bloated WordPress themes. Just fast, beautiful websites that turn visitors into paying customers.</p>
+          <p>When I'm not designing websites, you'll find me exploring downtown Mount Dora, supporting local businesses, and helping our community grow. I believe local businesses deserve websites that work as hard as they do.</p>
+          <div class="about-signature">Matthew Nolan</div>
+          <div class="about-location">&#128205; Mount Dora, Florida</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">Testimonials</div>
+        <h2>What Our Clients Say</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Matthew built us a gorgeous website that perfectly captures the romance of our carriage rides. Bookings have doubled since we launched. He understood our vision from day one."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SA</div>
+            <div>
+              <div class="testimonial-name">Sarah A.</div>
+              <div class="testimonial-role">Owner, Moonlit Acre Carriages</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Our old website was embarrassingly slow. Matthew rebuilt it from scratch and now it loads instantly. Customers actually compliment us on how nice our site looks. Highly recommend!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">KB</div>
+            <div>
+              <div class="testimonial-name">Klaus B.</div>
+              <div class="testimonial-role">Owner, Bavaria Haus</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"The process was seamless. Matthew delivered our contractor website in under two weeks, and we're already getting more quote requests than ever. The design looks incredibly professional."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MF</div>
+            <div>
+              <div class="testimonial-name">Mark F.</div>
+              <div class="testimonial-role">Owner, Faden Builders</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Working with Matthew was a breeze. He listened to what we needed, asked great questions, and delivered a website that makes our hair salon look like a million bucks. Our clients love it!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JL</div>
+            <div>
+              <div class="testimonial-name">Jessica L.</div>
+              <div class="testimonial-role">Owner, Blow Hair Studio</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"As a handyman, I needed a website that builds trust. Matthew delivered exactly that — clean, fast, and professional. I've gotten at least 5 new clients who found me through the site."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MS</div>
+            <div>
+              <div class="testimonial-name">Mike S.</div>
+              <div class="testimonial-role">Owner, MJS Home Improvements</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"The website Matthew built for our bakery is absolutely beautiful. It showcases our donuts and sandwiches perfectly, and the online menu has made ordering so much easier for our customers."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DK</div>
+            <div>
+              <div class="testimonial-name">David K.</div>
+              <div class="testimonial-role">Owner, Kings Donuts & Deli</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">FAQ</div>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            How long does it take to build a website?
+            <span class="faq-icon">&#9662;</span>
+          </button>
+          <div class="faq-answer">
+            <p>Most websites are completed within 1-2 weeks from our kickoff call. The exact timeline depends on the package you choose and how quickly you provide content and feedback. I keep you updated throughout the entire process so there are never any surprises.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question">
+            What's included in the price?
+            <span class="faq-icon">&#9662;</span>
+          </button>
+          <div class="faq-answer">
+            <p>Your price includes everything: custom design, hand-coded development, mobile responsiveness, contact forms, basic SEO setup, and launch. The Growth package also includes premium hosting, monthly updates, and ongoing support. No hidden fees, ever.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question">
+            Do I own my website?
+            <span class="faq-icon">&#9662;</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Once the project is complete and paid in full, you own 100% of your website. All the code, all the design, everything. You're free to take it anywhere or have anyone else work on it in the future.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-3">
+          <button class="faq-question">
+            What about hosting and domain?
+            <span class="faq-icon">&#9662;</span>
+          </button>
+          <div class="faq-answer">
+            <p>If you already have a domain, we can use that. If not, I can help you purchase one. For hosting, the Essential and Pro packages require you to set up your own hosting (I can recommend great options). The Growth package includes premium hosting in the monthly fee.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-4">
+          <button class="faq-question">
+            Can I make changes to my website later?
+            <span class="faq-icon">&#9662;</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! For Essential and Pro packages, I offer change requests at an hourly rate. For Growth clients, minor updates are included in your monthly plan. I also train you on how to make simple text and image changes yourself if you'd like.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-5">
+          <button class="faq-question">
+            Do you work with businesses outside Mount Dora?
+            <span class="faq-icon">&#9662;</span>
+          </button>
+          <div class="faq-answer">
+            <p>While I'm based in Mount Dora and love working with local Central Florida businesses, I'm happy to work with any business across the country. All meetings happen over video call, and the process works the same no matter where you're located.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="contact-bg"></div>
+    <div class="container contact-inner">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">Get In Touch</div>
+        <h2>Let's Build Something Together</h2>
+        <p class="contact-sub">Ready for a website that works as hard as you do? Send a message or book a free 15-minute discovery call.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>Start a Conversation</h3>
+          <p>Every great website starts with a conversation. Tell me about your business, your goals, and what you need. I'll get back to you within 24 hours.</p>
+          <div class="contact-detail">
+            <div class="icon">&#9993;</div>
+            <a href="mailto:hello@theniceguy.design">hello@theniceguy.design</a>
+          </div>
+          <div class="contact-detail">
+            <div class="icon">&#128205;</div>
+            <span style="color:var(--slate-light);font-size:0.9rem;">Mount Dora, Florida</span>
+          </div>
+          <div class="contact-cta-box">
+            <h4>Prefer to Talk?</h4>
+            <p>Book a free 15-minute call to discuss your project. No pressure, no commitment — just a friendly chat about your website needs.</p>
+            <a href="https://calendly.com" target="_blank" class="btn btn-primary" style="width:100%;">Book a 15-Min Call</a>
+          </div>
+        </div>
+        <div class="contact-form reveal reveal-delay-1">
+          <form id="contactForm" action="mailto:hello@theniceguy.design" method="post" enctype="text/plain">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="business">Business Name</label>
+                <input type="text" id="business" name="business" placeholder="Your business">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@business.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="package">Interested Package</label>
+              <select id="package" name="package">
+                <option value="">Select a package</option>
+                <option value="essential">Essential ($2,800)</option>
+                <option value="pro">Pro ($4,500)</option>
+                <option value="growth">Growth ($6,500 + $150/mo)</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about your business and what you need..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">TheNiceGuy<span>.</span>design</span>
+          <p>Custom websites for local service businesses in Mount Dora, FL and beyond. Fast, beautiful, built to convert.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">&#128247;</a>
+            <a href="#" aria-label="Facebook">&#128172;</a>
+            <a href="#" aria-label="LinkedIn">&#128188;</a>
+            <a href="#" aria-label="Twitter">&#128038;</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="#process">How It Works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#portfolio">Our Work</a>
+          <a href="#about">About</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="#testimonials">Testimonials</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> TheNiceGuy.design LLC. All rights reserved.</p>
+        <p>Made with care in Mount Dora, Florida &#127803;</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#8593;</button>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    (function() {
+      'use strict';
+
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      menuBtn.addEventListener('click', function() {
+        this.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      });
+
+      mobileLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          menuBtn.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // Navbar scroll effect
+      const nav = document.getElementById('nav');
+      let ticking = false;
+
+      function updateNav() {
+        if (window.scrollY > 60) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(updateNav);
+          ticking = true;
+        }
+      });
+
+      // Scroll-to-top button
+      const scrollTopBtn = document.getElementById('scrollTop');
+      let scrollTicking = false;
+
+      function updateScrollTop() {
+        if (window.scrollY > 600) {
+          scrollTopBtn.classList.add('visible');
+        } else {
+          scrollTopBtn.classList.remove('visible');
+        }
+        scrollTicking = false;
+      }
+
+      window.addEventListener('scroll', function() {
+        if (!scrollTicking) {
+          requestAnimationFrame(updateScrollTop);
+          scrollTicking = true;
+        }
+      });
+
+      scrollTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // FAQ accordion
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(function(item) {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', function() {
+          const isOpen = item.classList.contains('open');
+          // Close all
+          faqItems.forEach(function(i) { i.classList.remove('open'); });
+          // Open clicked if it was closed
+          if (!isOpen) {
+            item.classList.add('open');
+          }
+        });
+      });
+
+      // Scroll reveal animation (IntersectionObserver)
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach(function(el) {
+        revealObserver.observe(el);
+      });
+
+      // Set current year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            const navHeight = nav.offsetHeight;
+            const targetTop = target.getBoundingClientRect().top + window.scrollY - navHeight;
+            window.scrollTo({ top: targetTop, behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Form submission handler
+      const contactForm = document.getElementById('contactForm');
+      contactForm.addEventListener('submit', function(e) {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const business = document.getElementById('business').value;
+        const phone = document.getElementById('phone').value;
+        const pkg = document.getElementById('package').value;
+
+        const subject = 'Website Inquiry from ' + name + ' - ' + business;
+        const body = 'Name: ' + name + '%0D%0A' +
+                     'Business: ' + business + '%0D%0A' +
+                     'Email: ' + email + '%0D%0A' +
+                     'Phone: ' + phone + '%0D%0A' +
+                     'Package Interest: ' + pkg + '%0D%0A%0D%0A' +
+                     'Message:%0D%0A' + message;
+
+        window.location.href = 'mailto:hello@theniceguy.design?subject=' + encodeURIComponent(subject) + '&body=' + body;
+        e.preventDefault();
+      });
+
+    })();
+  </script>
+</body>
+</html>

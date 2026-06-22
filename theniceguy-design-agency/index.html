@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matthew Nolan — Entrepreneur & Builder | Mount Dora, FL</title>
+  <meta name="description" content="Entrepreneur & builder. Web design agency, structured dispute resolution, and AI productivity tools based in Mount Dora, Florida.">
+  <meta property="og:title" content="Matthew Nolan — Entrepreneur & Builder">
+  <meta property="og:description" content="Web design agency, dispute resolution, and AI productivity tools. Mount Dora, Florida.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    :root{
+      --ink:#0a0b0f;
+      --ink-light:#13141c;
+      --paper:#f5f3ee;
+      --cream:#faf9f6;
+      --signal:#2dd4bf;
+      --signal-dark:#14b8a6;
+      --slate:#6b7280;
+      --slate-light:#9ca3af;
+      --design:#2dd4bf;
+      --dispute:#f59e0b;
+      --loadless:#a78bfa;
+      --line:rgba(10,11,15,0.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--paper);
+      color:var(--ink);
+      font-family:Inter,system-ui,sans-serif;
+      min-height:100vh;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* ─── Ambient Background ─── */
+    .ambient-bg{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      overflow:hidden;
+    }
+    .orb{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(80px);
+      opacity:0;
+      will-change:transform;
+    }
+    .orb-1{
+      width:500px;height:500px;
+      background:radial-gradient(circle,rgba(45,212,191,0.15),transparent 70%);
+      top:-10%;left:-10%;
+      animation:float1 20s ease-in-out infinite;
+    }
+    .orb-2{
+      width:400px;height:400px;
+      background:radial-gradient(circle,rgba(245,158,11,0.12),transparent 70%);
+      top:40%;right:-8%;
+      animation:float2 25s ease-in-out infinite;
+    }
+    .orb-3{
+      width:350px;height:350px;
+      background:radial-gradient(circle,rgba(167,139,250,0.1),transparent 70%);
+      bottom:5%;left:30%;
+      animation:float3 18s ease-in-out infinite;
+    }
+    @keyframes float1{
+      0%,100%{transform:translate(0,0) scale(1)}
+      33%{transform:translate(60px,40px) scale(1.1)}
+      66%{transform:translate(-30px,80px) scale(0.9)}
+    }
+    @keyframes float2{
+      0%,100%{transform:translate(0,0) scale(1)}
+      33%{transform:translate(-50px,60px) scale(1.05)}
+      66%{transform:translate(40px,-40px) scale(0.95)}
+    }
+    @keyframes float3{
+      0%,100%{transform:translate(0,0) scale(1)}
+      50%{transform:translate(80px,-30px) scale(1.08)}
+    }
+
+    /* ─── Particle Canvas ─── */
+    #particleCanvas{
+      position:fixed;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+    }
+
+    /* ─── Main Container ─── */
+    .main{position:relative;z-index:10;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 24px}
+
+    /* ─── Header ─── */
+    .header{text-align:center;margin-bottom:48px;perspective:1000px}
+    .avatar-wrap{
+      display:inline-block;
+      margin-bottom:20px;
+      position:relative;
+    }
+    .avatar{
+      width:64px;height:64px;
+      border-radius:50%;
+      background:var(--ink);
+      color:var(--paper);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:"Space Grotesk",sans-serif;
+      font-weight:700;
+      font-size:22px;
+      letter-spacing:1px;
+      position:relative;
+      z-index:2;
+    }
+    .avatar-ring{
+      position:absolute;
+      inset:-4px;
+      border-radius:50%;
+      border:2px solid transparent;
+      background:linear-gradient(135deg,var(--design),var(--dispute),var(--loadless)) border-box;
+      -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+      mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      opacity:0.6;
+      animation:ringPulse 3s ease-in-out infinite;
+    }
+    @keyframes ringPulse{
+      0%,100%{transform:scale(1);opacity:0.6}
+      50%{transform:scale(1.05);opacity:1}
+    }
+    .name{
+      font-family:"Space Grotesk",sans-serif;
+      font-weight:700;
+      font-size:clamp(28px,5vw,40px);
+      letter-spacing:-0.03em;
+      margin-bottom:8px;
+      overflow:hidden;
+    }
+    .name .char{display:inline-block;opacity:0;transform:translateY(100%)}
+    .location{
+      font-size:14px;
+      color:var(--slate);
+      font-weight:500;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      opacity:0;
+    }
+    .location-dot{
+      width:8px;height:8px;
+      border-radius:50%;
+      background:#22c55e;
+      position:relative;
+    }
+    .location-dot::after{
+      content:'';
+      position:absolute;
+      inset:-3px;
+      border-radius:50%;
+      border:1.5px solid #22c55e;
+      animation:dotPing 2s ease-out infinite;
+    }
+    @keyframes dotPing{
+      0%{transform:scale(1);opacity:0.6}
+      100%{transform:scale(2);opacity:0}
+    }
+    .bio{
+      text-align:center;
+      font-size:15px;
+      color:var(--slate);
+      max-width:420px;
+      margin:24px auto 0;
+      line-height:1.7;
+      opacity:0;
+      transform:translateY(20px);
+    }
+
+    /* ─── Curiosity Prompt ─── */
+    .curiosity-prompt{
+      text-align:center;
+      margin-bottom:32px;
+      opacity:0;
+      transform:translateY(15px);
+    }
+    .curiosity-prompt span{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:var(--slate-light);
+    }
+    .curiosity-prompt .arrow-bounce{
+      display:inline-block;
+      margin-left:6px;
+      animation:bounceDown 2s ease-in-out infinite;
+    }
+    @keyframes bounceDown{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(6px)}
+    }
+
+    /* ─── Venture Cards ─── */
+    .ventures{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      max-width:600px;
+      width:100%;
+      perspective:2000px;
+    }
+    .venture{
+      display:block;
+      background:var(--cream);
+      border:1.5px solid var(--line);
+      border-radius:20px;
+      padding:28px;
+      text-decoration:none;
+      color:var(--ink);
+      position:relative;
+      overflow:hidden;
+      cursor:pointer;
+      transition:border-color 0.4s ease,box-shadow 0.4s ease;
+      transform-style:preserve-3d;
+      will-change:transform;
+      opacity:0;
+      transform:translateY(40px) rotateX(10deg);
+    }
+    .venture::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      border-radius:20px;
+      opacity:0;
+      transition:opacity 0.5s ease;
+      z-index:0;
+    }
+    .venture.v-design::before{
+      background:linear-gradient(135deg,rgba(45,212,191,0.08),transparent 60%);
+    }
+    .venture.v-dispute::before{
+      background:linear-gradient(135deg,rgba(245,158,11,0.08),transparent 60%);
+    }
+    .venture.v-loadless::before{
+      background:linear-gradient(135deg,rgba(167,139,250,0.08),transparent 60%);
+    }
+    .venture:hover::before{opacity:1}
+    .venture:hover{
+      box-shadow:0 20px 60px rgba(10,11,15,0.12);
+    }
+    .venture.v-design:hover{border-color:rgba(45,212,191,0.4)}
+    .venture.v-dispute:hover{border-color:rgba(245,158,11,0.4)}
+    .venture.v-loadless:hover{border-color:rgba(167,139,250,0.4)}
+
+    .venture-inner{
+      display:flex;
+      align-items:flex-start;
+      gap:20px;
+      position:relative;
+      z-index:2;
+    }
+    .icon-wrap{
+      width:52px;
+      height:52px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      flex-shrink:0;
+      position:relative;
+      overflow:hidden;
+    }
+    .icon-wrap.design{background:linear-gradient(135deg,rgba(45,212,191,0.15),rgba(45,212,191,0.05))}
+    .icon-wrap.dispute{background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(245,158,11,0.05))}
+    .icon-wrap.loadless{background:linear-gradient(135deg,rgba(167,139,250,0.15),rgba(167,139,250,0.05))}
+    .icon-wrap svg{width:26px;height:26px}
+
+    .venture-content{flex:1;min-width:0}
+    .venture-header{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:6px;
+    }
+    .venture-title{
+      font-family:"Space Grotesk",sans-serif;
+      font-weight:700;
+      font-size:18px;
+    }
+    .badge-new{
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+      padding:4px 10px;
+      border-radius:999px;
+      background:rgba(45,212,191,0.12);
+      color:#0d9488;
+      animation:badgePulse 3s ease-in-out infinite;
+    }
+    @keyframes badgePulse{
+      0%,100%{box-shadow:0 0 0 0 rgba(45,212,191,0.3)}
+      50%{box-shadow:0 0 0 6px rgba(45,212,191,0)}
+    }
+    .venture-desc{
+      font-size:14px;
+      color:var(--slate);
+      line-height:1.65;
+    }
+    .venture-arrow{
+      width:36px;height:36px;
+      border-radius:50%;
+      background:var(--ink);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
+      margin-top:8px;
+      font-size:14px;
+      transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+      position:relative;
+      overflow:hidden;
+    }
+    .venture:hover .venture-arrow{
+      transform:scale(1.15);
+    }
+    .venture.v-design:hover .venture-arrow{background:var(--design);color:var(--ink)}
+    .venture.v-dispute:hover .venture-arrow{background:var(--dispute);color:var(--ink)}
+    .venture.v-loadless:hover .venture-arrow{background:var(--loadless);color:#fff}
+    .venture-arrow svg{
+      width:14px;height:14px;
+      transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .venture:hover .venture-arrow svg{transform:translateX(2px)}
+
+    /* ─── Sparkle Particles on Cards ─── */
+    .sparkle{
+      position:absolute;
+      width:4px;height:4px;
+      border-radius:50%;
+      pointer-events:none;
+      z-index:3;
+      opacity:0;
+    }
+    .sparkle.active{
+      animation:sparkleFly 0.8s ease-out forwards;
+    }
+    @keyframes sparkleFly{
+      0%{opacity:1;transform:translate(0,0) scale(1)}
+      100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(0)}
+    }
+
+    /* ─── Glint Effect ─── */
+    .glint{
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:50%;
+      height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);
+      transition:left 0.6s ease;
+      z-index:1;
+      pointer-events:none;
+    }
+    .venture:hover .glint{left:150%}
+
+    /* ─── Magnetic Tilt Inner ─── */
+    .tilt-inner{
+      transition:transform 0.15s ease-out;
+      will-change:transform;
+    }
+
+    /* ─── Footer ─── */
+    .footer{
+      margin-top:48px;
+      text-align:center;
+      font-size:13px;
+      color:var(--slate-light);
+      opacity:0;
+      transform:translateY(15px);
+    }
+    .footer a{
+      color:var(--slate);
+      text-decoration:none;
+      border-bottom:1px solid var(--line);
+      transition:all 0.2s;
+      position:relative;
+    }
+    .footer a:hover{
+      color:var(--ink);
+      border-color:var(--ink);
+    }
+    .footer-links{
+      display:flex;
+      justify-content:center;
+      gap:24px;
+      margin-bottom:10px;
+      flex-wrap:wrap;
+    }
+    .footer-links a{
+      font-weight:500;
+      font-size:13px;
+      border-bottom:none;
+      position:relative;
+    }
+    .footer-links a::after{
+      content:'';
+      position:absolute;
+      bottom:-2px;
+      left:0;
+      width:0;
+      height:1.5px;
+      background:var(--ink);
+      transition:width 0.3s ease;
+    }
+    .footer-links a:hover::after{width:100%}
+
+    /* ─── Scroll Reveal ─── */
+    .reveal{
+      opacity:0;
+      transform:translateY(30px);
+    }
+
+    /* ─── Responsive ─── */
+    @media(max-width:600px){
+      .main{padding:40px 16px}
+      .venture{padding:22px}
+      .venture-inner{gap:14px}
+      .icon-wrap{width:44px;height:44px;font-size:20px}
+      .venture-title{font-size:16px}
+      .venture-arrow{width:32px;height:32px}
+      .orb{filter:blur(60px)}
+    }
+
+    /* ─── Reduced Motion ─── */
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        animation-duration:0.01ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:0.01ms!important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient Background -->
+  <div class="ambient-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Header -->
+    <div class="header">
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <div class="avatar" id="avatar">MN</div>
+      </div>
+      <h1 class="name" id="name">Matthew Nolan</h1>
+      <div class="location" id="location">
+        <span class="location-dot"></span>
+        Mount Dora, Florida
+      </div>
+      <p class="bio" id="bio">Entrepreneur & builder. I help local businesses grow, resolve disputes, and build tools that make work easier.</p>
+    </div>
+
+    <!-- Curiosity Prompt -->
+    <div class="curiosity-prompt" id="prompt">
+      <span>Explore my ventures <span class="arrow-bounce">&#8595;</span></span>
+    </div>
+
+    <!-- Venture Cards -->
+    <div class="ventures" id="ventures">
+      <!-- Web Design Agency -->
+      <a class="venture v-design" href="/agency/index.html" data-color="#2dd4bf" id="card1">
+        <div class="glint"></div>
+        <div class="tilt-inner">
+          <div class="venture-inner">
+            <div class="icon-wrap design">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--design)">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                <path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/>
+              </svg>
+            </div>
+            <div class="venture-content">
+              <div class="venture-header">
+                <span class="venture-title">Web Design Agency</span>
+                <span class="badge-new">New</span>
+              </div>
+              <p class="venture-desc">Custom websites for local businesses in Mount Dora and Lake County. Built to bring you leads.</p>
+            </div>
+            <div class="venture-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Dispute Resolution -->
+      <a class="venture v-dispute" href="/disputes/index.html" data-color="#f59e0b" id="card2">
+        <div class="glint"></div>
+        <div class="tilt-inner">
+          <div class="venture-inner">
+            <div class="icon-wrap dispute">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--dispute)">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <div class="venture-content">
+              <div class="venture-header">
+                <span class="venture-title">Dispute Resolution</span>
+              </div>
+              <p class="venture-desc">Legally vetted demand letters that turn consumer complaints into results. $49-$139.</p>
+            </div>
+            <div class="venture-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- LOADLESS -->
+      <a class="venture v-loadless" href="/loadless/index.html" data-color="#a78bfa" id="card3">
+        <div class="glint"></div>
+        <div class="tilt-inner">
+          <div class="venture-inner">
+            <div class="icon-wrap loadless">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--loadless)">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <div class="venture-content">
+              <div class="venture-header">
+                <span class="venture-title">LOADLESS</span>
+              </div>
+              <p class="venture-desc">AI-powered productivity ecosystem. AdminGone, MindGate, and ClarityOS.</p>
+            </div>
+            <div class="venture-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer" id="footer">
+      <div class="footer-links">
+        <a href="mailto:hello@theniceguy.design">hello@theniceguy.design</a>
+        <a href="/agency/#contact">Contact</a>
+      </div>
+      <p>TheNiceGuy.design LLC &middot; Florida</p>
+    </div>
+  </div>
+
+  <script>
+    // ═══════════════════════════════════════════
+    // GSAP ENTRANCE ANIMATIONS
+    // ═══════════════════════════════════════════
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Avatar pop-in
+    gsap.fromTo("#avatar",
+      {scale:0,rotation:-20},
+      {scale:1,rotation:0,duration:0.8,ease:"elastic.out(1,0.5)",delay:0.2}
+    );
+
+    // Avatar ring fade
+    gsap.to(".avatar-ring",{opacity:0.6,duration:1,delay:0.6});
+
+    // Name character reveal
+    const nameEl=document.getElementById("name");
+    const text=nameEl.textContent;
+    nameEl.innerHTML="";
+    text.split("").forEach((char,i)=>{
+      const span=document.createElement("span");
+      span.className="char";
+      span.textContent=char===" "?"\u00A0":char;
+      span.style.display="inline-block";
+      nameEl.appendChild(span);
+    });
+    gsap.to(".char",{
+      opacity:1,y:0,duration:0.6,stagger:0.04,ease:"power3.out",delay:0.5
+    });
+
+    // Location fade
+    gsap.to("#location",{opacity:1,duration:0.8,delay:0.9,ease:"power2.out"});
+
+    // Bio slide up
+    gsap.to("#bio",{opacity:1,y:0,duration:0.8,delay:1.1,ease:"power2.out"});
+
+    // Curiosity prompt
+    gsap.to("#prompt",{opacity:1,y:0,duration:0.6,delay:1.4,ease:"power2.out"});
+
+    // Cards stagger in with 3D flip
+    gsap.to(".venture",{
+      opacity:1,y:0,rotateX:0,duration:0.9,stagger:0.15,delay:1.6,
+      ease:"power3.out"
+    });
+
+    // Footer
+    gsap.to("#footer",{opacity:1,y:0,duration:0.6,delay:2.2,ease:"power2.out"});
+
+    // Ambient orbs fade in
+    gsap.to(".orb",{opacity:1,duration:2,delay:0.3,ease:"power2.out"});
+
+    // ═══════════════════════════════════════════
+    // 3D MAGNETIC TILT ON CARDS
+    // ═══════════════════════════════════════════
+    document.querySelectorAll(".venture").forEach(card=>{
+      const inner=card.querySelector(".tilt-inner");
+      card.addEventListener("mousemove",e=>{
+        const rect=card.getBoundingClientRect();
+        const x=e.clientX-rect.left;
+        const y=e.clientY-rect.top;
+        const centerX=rect.width/2;
+        const centerY=rect.height/2;
+        const rotateX=((y-centerY)/centerY)*-8;
+        const rotateY=((x-centerX)/centerX)*8;
+        inner.style.transform=`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01,1.01,1.01)`;
+        card.style.transform=`translateZ(20px)`;
+      });
+      card.addEventListener("mouseleave",()=>{
+        inner.style.transform="perspective(1000px) rotateX(0) rotateY(0) scale3d(1,1,1)";
+        card.style.transform="translateZ(0)";
+      });
+
+      // Sparkle particles on hover
+      card.addEventListener("mouseenter",e=>{
+        const rect=card.getBoundingClientRect();
+        const color=card.dataset.color;
+        for(let i=0;i<6;i++){
+          const sparkle=document.createElement("div");
+          sparkle.className="sparkle";
+          sparkle.style.background=color;
+          sparkle.style.left=(e.clientX-rect.left)+"px";
+          sparkle.style.top=(e.clientY-rect.top)+"px";
+          const angle=(Math.PI*2*i)/6;
+          const dist=30+Math.random()*40;
+          sparkle.style.setProperty("--tx",Math.cos(angle)*dist+"px");
+          sparkle.style.setProperty("--ty",Math.sin(angle)*dist+"px");
+          card.appendChild(sparkle);
+          requestAnimationFrame(()=>sparkle.classList.add("active"));
+          setTimeout(()=>sparkle.remove(),800);
+        }
+      });
+    });
+
+    // ═══════════════════════════════════════════
+    // FLOATING PARTICLE CANVAS
+    // ═══════════════════════════════════════════
+    const canvas=document.getElementById("particleCanvas");
+    const ctx=canvas.getContext("2d");
+    let W,H;
+    function resize(){
+      W=canvas.width=window.innerWidth;
+      H=canvas.height=window.innerHeight;
+    }
+    resize();
+    window.addEventListener("resize",resize);
+
+    class Particle{
+      constructor(){
+        this.reset();
+      }
+      reset(){
+        this.x=Math.random()*W;
+        this.y=Math.random()*H;
+        this.size=Math.random()*2+0.5;
+        this.speedX=(Math.random()-0.5)*0.3;
+        this.speedY=(Math.random()-0.5)*0.3;
+        this.opacity=Math.random()*0.15+0.05;
+        const colors=["45,212,191","245,158,11","167,139,250"];
+        this.color=colors[Math.floor(Math.random()*colors.length)];
+        this.life=0;
+        this.maxLife=200+Math.random()*300;
+      }
+      update(){
+        this.x+=this.speedX;
+        this.y+=this.speedY;
+        this.life++;
+        if(this.life>this.maxLife||this.x<0||this.x>W||this.y<0||this.y>H){
+          this.reset();
+        }
+      }
+      draw(){
+        const fade=Math.sin((this.life/this.maxLife)*Math.PI);
+        ctx.beginPath();
+        ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+        ctx.fillStyle=`rgba(${this.color},${this.opacity*fade})`;
+        ctx.fill();
+      }
+    }
+
+    const particles=Array.from({length:50},()=>new Particle());
+    function animateParticles(){
+      ctx.clearRect(0,0,W,H);
+      particles.forEach(p=>{p.update();p.draw()});
+      // Draw connections
+      for(let i=0;i<particles.length;i++){
+        for(let j=i+1;j<particles.length;j++){
+          const dx=particles[i].x-particles[j].x;
+          const dy=particles[i].y-particles[j].y;
+          const dist=Math.sqrt(dx*dx+dy*dy);
+          if(dist<120){
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x,particles[i].y);
+            ctx.lineTo(particles[j].x,particles[j].y);
+            ctx.strokeStyle=`rgba(100,116,139,${0.04*(1-dist/120)})`;
+            ctx.lineWidth=0.5;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // Mouse interaction with particles
+    let mouseX=W/2,mouseY=H/2;
+    document.addEventListener("mousemove",e=>{
+      mouseX=e.clientX;
+      mouseY=e.clientY;
+      particles.forEach(p=>{
+        const dx=p.x-mouseX;
+        const dy=p.y-mouseY;
+        const dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<150){
+          const force=(150-dist)/150;
+          p.speedX+=(dx/dist)*force*0.02;
+          p.speedY+=(dy/dist)*force*0.02;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
